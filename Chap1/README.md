@@ -5,6 +5,7 @@
 (1) データベースの元データとなるテキストデータの構築
 
 ```bash
+$ pip install datasets
 $ python mk_base_text_data.py
 ```
 
@@ -13,7 +14,8 @@ $ python mk_base_text_data.py
 (2) テキストデータをチャンクの集合に分割
 
 ```bash
-python mk_chunks.py
+$ pip install langchain_text_splitters
+$ python mk_chunks.py
 ```
 
 > data/chunks.pkl が作成される
@@ -21,7 +23,9 @@ python mk_chunks.py
 (3) チャンクの集合から faiss のインデックスを作成
 
 ```bash
-python mk_text_index.py
+$ pip install faiss-cpu
+$ pip install sentence_transformers
+$ python mk_text_index.py
 ```
 
 > data/ibaraki_index.faiss が作成される
@@ -29,7 +33,8 @@ python mk_text_index.py
 (4) 検索器を作り、SimpleRetrievalQA のインスタンスを作り、RAG 実行。クエリはプログラム内で設定
 
 ```bash
-python naive_rag.py
+$ pip install accelerate
+$ python naive_rag.py
 ```
 
 > *** 回答が表示される ***

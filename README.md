@@ -37,6 +37,12 @@ conda activate mragbook
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 ```
 
+**GPU がある場合（CUDA 13.2）**
+
+```bash
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu132
+```
+
 **GPU がない場合**
 
 ```bash
