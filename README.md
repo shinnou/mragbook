@@ -37,16 +37,16 @@ conda activate mragbook
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 ```
 
-**GPU がある場合（CUDA 13.2）**
+本書では CUDA 12.6 の利用を前提にしています。
 
-```bash
-pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu132
-```
+CUDA 13 では ColQwen が動かないので、Chap4 以降のプログラムを動かすのは難しいです。
 
 **GPU がない場合**
 
 ```bash
 pip3 install torch torchvision
 ```
+
+ただGPU がないと実質動かすのは厳しいと思います。
 
 PyTorch のインストール後、各 Chapter ディレクトリの `README.md` に従って残りの依存ライブラリをインストールしてください。
