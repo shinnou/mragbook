@@ -30,7 +30,8 @@ def embding_batch_text(chunks: list[str], batch_size: int = 64) -> np.ndarray:
             return_tensors="pt",
         ).to(device)
         text_features = model.get_text_features(**inputs)
-        v = text_features.detach().float().cpu().numpy()  # (B, D)
+        #  v = text_features.detach().float().cpu().numpy()  # (B, D)
+        v = text_features.pooler_output.detach().float().cpu().numpy()        
         vecs.append(v)
     return normalize(np.vstack(vecs).astype(np.float32))
 
@@ -42,7 +43,8 @@ def embding_batch_image(image_paths: list[str], batch_size: int = 16) -> np.ndar
         imgs = [Image.open(p).convert("RGB") for p in image_paths[i : i + batch_size]]
         inputs = processor(images=imgs, return_tensors="pt").to(device)
         img_features = model.get_image_features(**inputs)
-        v = img_features.detach().float().cpu().numpy()  # (B, D)
+        # v = img_features.detach().float().cpu().numpy()  # (B, D)
+        v = img_features.pooler_output.detach().float().cpu().numpy()  # (B, D)
         vecs.append(v)
     return normalize(np.vstack(vecs).astype(np.float32))
 

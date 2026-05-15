@@ -12,11 +12,17 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 
 vlm_model_id = "Qwen/Qwen2.5-VL-7B-Instruct"
 
+# vlm_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+#     vlm_model_id, dtype="auto", device_map="auto"
+# ).eval()
+
 vlm_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-    vlm_model_id, dtype="auto", device_map="auto"
+    vlm_model_id, dtype="auto", device_map="auto", offload_buffers=True,
 ).eval()
 
-vlm_processor = AutoProcessor.from_pretrained(vlm_model_id, use_fast=True)   ## .to(device)
+# vlm_processor = AutoProcessor.from_pretrained(vlm_model_id, use_fast=True)   ## .to(device)
+vlm_processor = AutoProcessor.from_pretrained(vlm_model_id)   ## .to(device)
+
 
 system_prompt = """
 あなたはマルチモーダルRAGシステムの回答生成アシスタントです。
@@ -125,7 +131,8 @@ class FAISS_MM_DB:
             v = self.model.get_text_features(input_ids=input_ids, attention_mask=attn)
         else:
             v = self.model.get_text_features(input_ids=input_ids)
-        v = v.detach().float().cpu().numpy().astype(np.float32)  # (1, D)
+        # v = v.detach().float().cpu().numpy().astype(np.float32)  # (1, D)
+        v = v.pooler_output.detach().float().cpu().numpy().astype(np.float32)  # (1, D)            
         v = v / np.maximum(np.linalg.norm(v, axis=1, keepdims=True), 1e-12)
         return v
 
@@ -185,7 +192,9 @@ vlm_model_id = "Qwen/Qwen2.5-VL-7B-Instruct"
 vlm_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
     vlm_model_id, dtype="auto", device_map="auto"
 ).eval()
-vlm_processor = AutoProcessor.from_pretrained(vlm_model_id, use_fast=True)   ## .to(device)
+
+# vlm_processor = AutoProcessor.from_pretrained(vlm_model_id, use_fast=True)   ## .to(device)
+vlm_processor = AutoProcessor.from_pretrained(vlm_model_id)   ## .to(device)
 
 if device == "cuda":
     cembd_model = cembd_model.to(torch.float16)
