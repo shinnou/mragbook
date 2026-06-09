@@ -62,7 +62,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 **GPU がない場合**
 
 ```bash
-pip3 install torch torchvision
+pip install torch torchvision
 ```
 
 GPU がない環境でも一部のプログラムは実行できますが、Chap4 以降の処理では計算時間やメモリ使用量の点から GPU 環境での実行を推奨します。
@@ -79,7 +79,6 @@ PyTorch のインストール後、各 Chapter ディレクトリの `README.md`
 
 サンプルプログラムの不具合や、書籍本文の誤植・誤りを見つけた場合は GitHub Issues からご報告ください。以下のページからお願いします。
 
-- [Issues](https://github.com/shinnou/mragbook/issues)
 - [新しい Issue を作成](https://github.com/shinnou/mragbook/issues/new/choose)
 
 GitHub Issues を使うには GitHub アカウントが必要です。
