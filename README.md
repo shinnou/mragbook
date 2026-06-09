@@ -1,6 +1,8 @@
-# マルチモーダル RAG 入門
+# 入門マルチモーダルRAG
 
-本リポジトリは、書籍「マルチモーダル RAG 入門」に掲載しているサンプルプログラムを Chapter 別に収録したものです。
+本リポジトリは、書籍『入門マルチモーダルRAG ― 図表を読み解くAIアプリケーションの実装』のサンプルプログラムを配布するためのリポジトリです。
+
+本リポジトリでは、書籍の各章で解説したサンプルプログラム、実行手順、補足情報、正誤情報を公開しています。
 
 ## 書籍情報
 - 書名：入門マルチモーダルRAG: 図表を読み解くAIアプリケーションの実装
@@ -24,6 +26,15 @@ mragbook/
 
 各 Chapter のディレクトリには `README.md` が置かれており、そのChapterのプログラムを動かすための手順が記載されています。プログラムを実行する前に、各ディレクトリの `README.md` を参照してください。
 
+## サンプルプログラムの取得方法
+
+以下のコマンドで本リポジトリを取得できます。
+
+```bash
+git clone https://github.com/shinnou/mragbook.git
+cd mragbook
+```
+
 ## 環境構築
 
 ### 仮想環境の作成
@@ -45,9 +56,8 @@ conda activate mragbook
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 ```
 
-本書では CUDA 12.6 の利用を前提にしています。
+本書の動作確認は CUDA 12.6 環境で行っています。CUDA 13 環境では、ColQwen 関連のライブラリが正常に動作しない場合があるため、Chap4 以降のプログラムは CUDA 12.6 環境での実行を推奨します。
 
-CUDA 13 では ColQwen が動かないので、Chap4 以降のプログラムを動かすのは難しいです。
 
 **GPU がない場合**
 
@@ -55,7 +65,7 @@ CUDA 13 では ColQwen が動かないので、Chap4 以降のプログラムを
 pip3 install torch torchvision
 ```
 
-ただ GPU がないと実質動かすのは厳しいと思います。
+GPU がない環境でも一部のプログラムは実行できますが、Chap4 以降の処理では計算時間やメモリ使用量の点から GPU 環境での実行を推奨します。
 
 PyTorch のインストール後、各 Chapter ディレクトリの `README.md` に従って残りの依存ライブラリをインストールしてください。
 
@@ -67,7 +77,10 @@ PyTorch のインストール後、各 Chapter ディレクトリの `README.md`
 
 ## 質問・不具合報告・正誤情報について
 
-サンプルプログラムの不具合や、書籍本文の誤植・誤りを見つけた場合は GitHub Issues からご報告ください。
+サンプルプログラムの不具合や、書籍本文の誤植・誤りを見つけた場合は GitHub Issues からご報告ください。以下のページからお願いします。
+
+- [Issues](https://github.com/shinnou/mragbook/issues)
+- [新しい Issue を作成](https://github.com/shinnou/mragbook/issues/new/choose)
 
 GitHub Issues を使うには GitHub アカウントが必要です。
 
