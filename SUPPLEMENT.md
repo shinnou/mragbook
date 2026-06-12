@@ -13,11 +13,12 @@ https://huggingface.co/athrael-soju/colqwen3.5-4.5B-v3
 
 ColQwen3.5 を動かすための transformers 5.x と普通に入っている vllm 0.19.0 は共存できないので、vllm を含まない環境を構築した方が良いです。以下で構築した colqwen_pure の環境で動きます。
 
+```bash
 conda create -n colqwen_pure python=3.11 -y
 conda activate colqwen_pure
 pip install torch torchvision torchaudio
 pip install colpali-engine
-
+```
 
 
 
