@@ -1,0 +1,10 @@
+[workspace]
+authors = ["Hiroyuki Shinnou <hiroyuki.shinnou.0828@vc.ibaraki.ac.jp>"]
+channels = ["conda-forge"]
+name = "mragbook"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]

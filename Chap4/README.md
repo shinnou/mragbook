@@ -3,8 +3,7 @@
 (1) サンプルで利用する PDF 文書をダウンロードする
 
 ```bash
-$ curl -O https://www.soumu.go.jp/johotsusintokei/\
-whitepaper/ja/r07/pdf/00zentai.pdf
+$ curl -O https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r07/pdf/00zentai.pdf
 ```
 
 > 00zentai.pdf がダウンロードされる
@@ -21,8 +20,8 @@ $ python mk_page_images.py
 (3) ページ画像から ColPali 用のインデックスを作成する
 
 ```bash
-$ pip install colpali_engine
-$ python create_embedding.py
+$ pip install colpali_engine --no-deps
+$ python create_embedding.py 
 ```
 
 > data/embedding.pt が作成される
@@ -34,3 +33,4 @@ $ python mmrag_colpali.py
 ```
 
 > *** 回答が表示される ***
+	

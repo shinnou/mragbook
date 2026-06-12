@@ -12,3 +12,5 @@ doc_dir.mkdir(parents=True, exist_ok=True)
 for i, image in enumerate(images):
     filename = f"page_{i+1}.png"
     image.save(doc_dir / filename, "PNG")
+    print(f"{filename}  saved")
+    

@@ -57,8 +57,7 @@ $ python mm_rag_image_to_text.py
 (1) サンプルで利用する PDF 文書をダウンロードする
 
 ```bash
-$ curl -O https://www.city.fukushima.fukushima.jp/\
-material/files/group/6/sumahohanndobook2025.pdf
+$ curl -O https://www.city.fukushima.fukushima.jp/material/files/group/6/sumahohanndobook2025.pdf
 ```
 
 > sumahohanndobook2025.pdf がダウンロードされる
