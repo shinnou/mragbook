@@ -185,8 +185,8 @@ retrieval_score: {score}
   "rewrite_query_hint": "..."  // 任意
 }}
 """
-
-    client = ollama.Client(host='http://157.80.86.245:11434')
+    # 以下の host の URL を自身の  ollama サーバの URL へ変更する
+    client = ollama.Client(host='http://100.200.300.400:11434')
     response = client.chat(model='qwen2.5:7b', messages=[
               {"role": "system", "content": system},
               {"role": "user", "content": user},
