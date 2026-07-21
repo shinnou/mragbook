@@ -19,7 +19,8 @@ with open("data/chunks.pkl", "rb") as f:
 
 import torch
 model_name = 'intfloat/multilingual-e5-large'
-model = SentenceTransformer(model_name, device='cuda')
+# model = SentenceTransformer(model_name, device='cuda')
+model = SentenceTransformer(model_name, device='mps')
 
 passages = [f"passage: {chunk}" for chunk in chunks]
 embeddings = model.encode(passages, batch_size=64, show_progress_bar=True)

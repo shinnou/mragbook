@@ -131,8 +131,8 @@ class FAISS_MM_DB:
             v = self.model.get_text_features(input_ids=input_ids, attention_mask=attn)
         else:
             v = self.model.get_text_features(input_ids=input_ids)
-        # v = v.detach().float().cpu().numpy().astype(np.float32)  # (1, D)
-        v = v.pooler_output.detach().float().cpu().numpy().astype(np.float32)  # (1, D)            
+        v = v.detach().float().cpu().numpy().astype(np.float32)  # (1, D)
+        # v = v.pooler_output.detach().float().cpu().numpy().astype(np.float32)  # (1, D)
         v = v / np.maximum(np.linalg.norm(v, axis=1, keepdims=True), 1e-12)
         return v
 

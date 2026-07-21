@@ -1,3 +1,6 @@
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 import torch
 from colpali_engine.models import ColQwen2_5, ColQwen2_5_Processor
 from tqdm import tqdm

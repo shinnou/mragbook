@@ -1,3 +1,6 @@
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 # import os
 import torch
 # from pdf2image import convert_from_path
