@@ -4,7 +4,7 @@
 
 ・p.11 ファイル名（3ヶ所）が mk_retriver.py の retriver は retriever のタイポ。ただし実際に配布しているファイル名も mk_retriver.py だったで、配布のファイル名も mk_retriever.py に修正 (2026年7月23日)
 
-・p.19 の oSimpleRetrievalQA クラスの定義が配布のプログラムと大きく違います。これは別のコードを書籍の方に写したのが原因です。配布のプログラム（以下のコード）が正しいです。
+・p.19 の SimpleRetrievalQA クラスの定義が配布のプログラムと大きく違います。これは別のコードを書籍の方に写したのが原因です。配布のプログラム（以下のコード）が正しいです。
 
 ```
 class SimpleRetrievalQA:
