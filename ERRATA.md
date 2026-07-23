@@ -1,5 +1,18 @@
 # 正誤表
 
+・p.27 の create_db.py の open に括弧が抜けています。正しくは以下です。配布のコードは正しいです。(2026年7月23日)
+
+```
+with open("data/ibaraki_vec_db.json", "w", encoding="utf-8") as f:
+```
+
+・p.28 の generate_ans.py の open に括弧が抜けています。正しくは以下です。配布のコードは正しいです。(2026年7月23日)
+
+```
+with open("data/ibaraki_vec_db.json", "r", encoding="utf-8") as f:
+```
+
+
 ・p.10 ファイル名が mk-rag-db-from-text.py となっているが、mk_text_index.py の間違い (2026年7月23日)
 
 ・p.11 ファイル名（3ヶ所）が mk_retriver.py の retriver は retriever のタイポ。ただし実際に配布しているファイル名も mk_retriver.py だったで、配布のファイル名も mk_retriever.py に修正 (2026年7月23日)

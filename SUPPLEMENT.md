@@ -1,5 +1,9 @@
 # 補足説明
 
+## poppler-windows
+
+4章のプログラムを Windows で動かす際には poppler-windows をインストールしておく必要があります。
+
 ## 2章で使うモデル
 
 2章で使うモデルは書籍では gpt-4.1-mini か gpt-4.1 と書いていましたが、現在は gpt-5.4-mini か gpt-5.4 も使えますし、こちらの方が良い結果がでる感じです。
@@ -19,8 +23,3 @@ conda activate colqwen_pure
 pip install torch torchvision torchaudio
 pip install colpali-engine
 ```
-
-
-
-
-
